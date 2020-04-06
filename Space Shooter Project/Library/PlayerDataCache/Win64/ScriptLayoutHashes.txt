@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/nhl27/OneDrive/Desktop/Unity Builds/Tutorial 3/Space Shooter Project.exe
+C:/Users/nhl27/OneDrive/Desktop/Unity Builds/Challenge 3/Space Shooter Project.exe
 SceneListBegin?
 Assets/_Scenes/Main_.unity
 SceneListEnd?
@@ -85,6 +85,7 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 0fd6822f6177297bd0eb4d83cc7a9030 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+757d56d0910fdc18d03e5b801da35a3f Assembly-CSharp.dll:.EvasiveManeuver
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Done_Mover
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -114,11 +115,17 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DestroyByBoundary
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
+de7d6a5820dded6c7f75780e98f1dc41 Assembly-CSharp.dll:.WeaponController
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
+afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Mover
+be2d1663d6bc8ce39ce9c8dea6a963c7 Assembly-CSharp.dll:.BGScroller
 0d7b3f0db343f3952a629582c6942cec Assembly-CSharp.dll:.Done_EvasiveManeuver
+7e3aaca1b7b596e499c757ab75ab276c Assembly-CSharp.dll:.PlayerController
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
+813a98d7c38886af7cdb0e991a546577 Assembly-CSharp.dll:.RandomRotator
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -162,15 +169,11 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 d87a00c7a10bfacb889f2e1d042dc43a Assembly-CSharp.dll:.Done_PlayerController
 813a98d7c38886af7cdb0e991a546577 Assembly-CSharp.dll:.Done_RandomRotator
+3aeec2416520303994f9d66901c73317 Assembly-CSharp.dll:.DestroyByContact
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 be2d1663d6bc8ce39ce9c8dea6a963c7 Assembly-CSharp.dll:.Done_BGScroller
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-96579b1d7c32aebb6c65db101ee7a10b Assembly-CSharp.dll:.Done_GameController
-7e3aaca1b7b596e499c757ab75ab276c Assembly-CSharp.dll:.PlayerController
-afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Mover
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DestroyByBoundary
-813a98d7c38886af7cdb0e991a546577 Assembly-CSharp.dll:.RandomRotator
-3aeec2416520303994f9d66901c73317 Assembly-CSharp.dll:.DestroyByContact
-c2725e612e12901aacff3902c3592c0f Assembly-CSharp.dll:.GameController
 d3bbd1f86b55a6168b664522b2cf57b3 Assembly-CSharp.dll:.DestroyByTime
+771eb50682dc4864dd0e27094c1aa245 Assembly-CSharp.dll:.GameController
+96579b1d7c32aebb6c65db101ee7a10b Assembly-CSharp.dll:.Done_GameController
