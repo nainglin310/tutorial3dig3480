@@ -24,6 +24,9 @@ public class GameController : MonoBehaviour
     public AudioClip victoryMusic;
     public AudioClip defeatMusic;
 
+    public float timeLeft;
+    public Text startText;
+
 
     void Start()
     {
@@ -50,6 +53,20 @@ public class GameController : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             Application.Quit();
+        }
+
+        timeLeft -= Time.deltaTime;
+        startText.text = (timeLeft).ToString("0");
+
+        if (timeLeft <= 0)
+        {
+            timeLeft = 0;
+            restart = true;
+            gameOver = true;
+            restartText.text = "Press 'X' to Restart";
+            gameOverText.text = "Game Over! GAME CREATED BY NAING LIN";
+            score = 0;
+
         }
 
     }
@@ -96,12 +113,9 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        if (gameOver == true)
-        {
-            restartText.text = "Press 'X' to Restart";
-            restart = true;
 
-        }
+        restartText.text = "Press 'X' to Restart";
+        restart = true;
         gameOverText.text = "Game Over! GAME CREATED BY NAING LIN";
         musicSource.clip = defeatMusic;
         musicSource.Play();
