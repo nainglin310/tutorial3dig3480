@@ -13,13 +13,17 @@ public class GameController : MonoBehaviour
     public float waveWait;
 
     public Text ScoreText;
-    private int score;
+    public int score;
 
     public Text restartText;
     public Text gameOverText;
-    private bool gameOver;
+    public bool gameOver;
     private bool restart;
     public Text winText;
+    public AudioSource musicSource;
+    public AudioClip victoryMusic;
+    public AudioClip defeatMusic;
+
 
     void Start()
     {
@@ -47,6 +51,7 @@ public class GameController : MonoBehaviour
         {
             Application.Quit();
         }
+
     }
 
     IEnumerator SpawnWaves()
@@ -65,12 +70,7 @@ public class GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
 
-            if (gameOver)
-            {
-                restartText.text = "Press 'X' to Restart";
-                restart = true;
-                break;
-            }
+
         }
     }
 
@@ -80,13 +80,15 @@ public class GameController : MonoBehaviour
         UpdateScore();
     }
 
-    void UpdateScore()
+    public void UpdateScore()
     {
         ScoreText.text = "Points: " + score;
-        if (score >= 100)
+        if (score >= 300)
         {
+            restartText.text = "Press 'X' to Restart";
             winText.text = "You win! GAME CREATED BY NAING LIN";
-
+            musicSource.clip = victoryMusic;
+            musicSource.Play();
             gameOver = false;
             restart = true;
         }
@@ -94,8 +96,15 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        if (gameOver == true)
+        {
+            restartText.text = "Press 'X' to Restart";
+            restart = true;
+
+        }
         gameOverText.text = "Game Over! GAME CREATED BY NAING LIN";
-        gameOver = true;
+        musicSource.clip = defeatMusic;
+        musicSource.Play();
 
     }
 }

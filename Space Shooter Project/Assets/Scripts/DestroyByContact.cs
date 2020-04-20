@@ -7,16 +7,16 @@ public class DestroyByContact : MonoBehaviour
     public GameObject explosion;
     public GameObject playerExplosion;
     public int scoreValue;
-    private GameController gameContoller;
+    public GameController gameController;
 
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
-            gameContoller = gameControllerObject.GetComponent <GameController>();
+            gameController = gameControllerObject.GetComponent <GameController>();
         }
-        if (gameContoller == null)
+        if (gameController == null)
         {
             Debug.Log("Cannot find 'GameController' script");
         }
@@ -25,7 +25,7 @@ public class DestroyByContact : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("Player"))
+        if (other.CompareTag("Boundary") || other.CompareTag("Enemy"))
         {
             return;
         }
@@ -38,9 +38,9 @@ public class DestroyByContact : MonoBehaviour
         if (other.tag == "Player")
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-            gameContoller.GameOver();
+            gameController.GameOver();
         }
-        gameContoller.AddScore(scoreValue);
+        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
 

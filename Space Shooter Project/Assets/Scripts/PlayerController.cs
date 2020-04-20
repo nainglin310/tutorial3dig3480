@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary
@@ -15,26 +16,39 @@ public class PlayerController : MonoBehaviour
 
     public GameObject shot;
     public Transform shotSpawn;
+    public Transform shotSpawn2;
+    public Transform shotSpawn3;
     public float fireRate;
     private Rigidbody rb;
     private float nextFire;
     public AudioSource weaponSource;
     public AudioClip weaponSound;
 
+    public bool doubleShot;
+
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        doubleShot = false;
     }
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
+            if (doubleShot)
+            {
+                FireBullet();
+                StartCoroutine("DoubleCountdown", 0);
+            }
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             GetComponent<AudioSource>().Play();
             weaponSource.clip = weaponSound;
             weaponSource.Play();
         }
+
 
     }
     void FixedUpdate()
@@ -53,5 +67,30 @@ public class PlayerController : MonoBehaviour
         );
 
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "DoubleShot")
+        {
+            doubleShot = true;
+            Destroy(other.gameObject);
+        }
+    }
+
+    void FireBullet()
+    {
+        GameObject Bullet1 = (GameObject)Instantiate(shot);
+        Bullet1.transform.position = shotSpawn.transform.position;
+        GameObject Bullet2 = (GameObject)Instantiate(shot);
+        Bullet2.transform.position = shotSpawn2.transform.position;
+        GameObject Bullet3 = (GameObject)Instantiate(shot);
+        Bullet3.transform.position = shotSpawn3.transform.position;
+    }
+    IEnumerator DoubleCountdown()
+    {
+        yield return new WaitForSeconds(10f);
+        doubleShot = false;
     }
 } 
